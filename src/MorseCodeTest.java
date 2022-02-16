@@ -42,9 +42,29 @@ public class MorseCodeTest {
     public void getStarsFromLongerInput(){
         MorseCodeToMorse morse = new MorseCodeToMorse();
 
-        String input = "E J";
+        String input = "EJ";
         String actual = morse.convertToMorse(input);
 
         assertEquals("* *---", actual);
+    }
+
+    @Test
+    public void getStarsFromTwoWords(){
+        MorseCodeToMorse morse = new MorseCodeToMorse();
+
+        String input = "E J";
+        String actual = morse.convertToMorse(input);
+
+        assertEquals("* | *---", actual);
+    }
+
+    @Test
+    public void getStarsFromLongerTwoWords(){
+        MorseCodeToMorse morse = new MorseCodeToMorse();
+
+        String input = "HEJ JAG";
+        String actual = morse.convertToMorse(input);
+
+        assertEquals("**** * *--- | *--- *- --*", actual);
     }
 }

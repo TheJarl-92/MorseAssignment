@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+
 import java.util.HashMap;
+import java.util.Locale;
 
 
 public class MorseCodeToMorse {
@@ -21,22 +22,26 @@ public class MorseCodeToMorse {
         toMorse.put("5", "*****");  toMorse.put("6", "-****");  toMorse.put("7", "--***");
         toMorse.put("8", "---**");  toMorse.put("9", "----*");  toMorse.put("0", "-----");
         toMorse.put(".", "*-*-*-"); toMorse.put(",", "--**--"); toMorse.put("?", "**--**");
+        toMorse.put(" ", "|");
     }
     public String convertToMorse(String input) {
-        String convertedLetter;
-        /*
-        for (int i = 0; i<input.length(); i++) {
-             englishLetter = String.valueOf(input.charAt(i));
-            if (!(englishLetter.equalsIgnoreCase(" "))) {
-                convertedLetter = toMorse.get(englishLetter);
-                return convertedLetter;
+        String convertedLetter[] = input.toUpperCase(Locale.ROOT).split("");
+        //Konvertera bokstäverna till storbokstav så man inte kan skriva fel, då hashmap inte har små bokstäver.
+
+        StringBuilder morseReturn = new StringBuilder();
+        //Inte använt en StringBuilder förut men något som rekommenderades när man ville plussa på strängar på en sträng.
+
+        for (int i = 0; i<convertedLetter.length; i++) {
+            convertedLetter[i] = toMorse.get(convertedLetter[i]);
+            if (!(i == convertedLetter.length - 1)) {
+                morseReturn.append(convertedLetter[i] + " ");
             } else {
-                i++;
+                morseReturn.append(convertedLetter[i]);
             }
-        }*/
+            //Såvida i inte har nått slutet på arrayen lägg till ett extra mellanslag, annars när i har nått slutet på arrayen
+            //lägg bara till den sista morse biten.
+        }
 
-        convertedLetter = toMorse.get(input);
-        return convertedLetter;
-
+        return morseReturn.toString();
     }
 }

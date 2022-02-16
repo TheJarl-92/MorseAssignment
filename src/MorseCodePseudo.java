@@ -3,14 +3,14 @@ public class MorseCodePseudo {
     Skriv ett program som gör om morsekod till engelska och engelska till morsekod
     Use user input to convert morse to english and vice versa.
     Scanner to read user input.
-    FOR ENGLISH
+    FROM ENGLISH
     User input sent to morse logic class to get read and converted.
     Create hashmap table to easily get correct morse depending on char.
     Read the input for every char, probably in a for loop.
     Use .get to get from hashmap and save to a variable.
     Return morse code saved in the variable.
 
-    FOR MORSE
+    FROM MORSE
     User input sent to english logic class to get read and converted.
     Create hashmap table to easily get correct English character depending on morse.
     Read the input for every morse code separate with space.
