@@ -19,10 +19,20 @@ public class MorseCodeToEnglish {
         toEnglish.put("*****", "5");  toEnglish.put("-****", "6");  toEnglish.put("--***", "7");
         toEnglish.put("---**", "8");  toEnglish.put("----*", "9");  toEnglish.put("-----", "0");
         toEnglish.put("*-*-*-", "."); toEnglish.put("--**--", ","); toEnglish.put("**--**", "?");
-        toEnglish.put(" ", "|");
+
     }
 
     public String convertToEnglish(String input) {
-        return "S";
+        String convertedMorse[] = input.split(" ");
+        StringBuilder englishReturn = new StringBuilder();
+        for (int i = 0; i<convertedMorse.length; i++) {
+            convertedMorse[i] = toEnglish.get(convertedMorse[i]);
+            if (!(i == convertedMorse.length - 1)) {
+                englishReturn.append(convertedMorse[i] + " ");
+            } else {
+                englishReturn.append(convertedMorse[i]);
+            }
+        }
+        return englishReturn.toString();
     }
 }

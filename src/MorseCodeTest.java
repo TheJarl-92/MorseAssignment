@@ -77,4 +77,35 @@ public class MorseCodeTest {
 
         assertEquals("S", actual);
     }
+
+    @Test
+    public void getLetterEFromStars(){
+        MorseCodeToEnglish english = new MorseCodeToEnglish();
+
+        String input = "*";
+        String actual = english.convertToEnglish(input);
+
+        assertEquals("E", actual);
+    }
+
+    @Test
+    public void getTwoLettersFromStars(){
+        MorseCodeToEnglish english = new MorseCodeToEnglish();
+
+        String input = "* ***";
+        String actual = english.convertToEnglish(input);
+
+        assertEquals("E S", actual);
+    }
+
+    @Test
+    public void getLettersFromStarsSentence(){
+        MorseCodeToEnglish english = new MorseCodeToEnglish();
+
+        String input = "**** * *--- *--- *- --*";
+        String actual = english.convertToEnglish(input);
+
+        assertEquals("H E J J A G", actual);
+    }
+
 }
