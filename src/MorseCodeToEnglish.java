@@ -16,9 +16,9 @@ public class MorseCodeToEnglish {
         toEnglish.put("***-", "V");   toEnglish.put("*--", "W");    toEnglish.put("-**-", "X");
         toEnglish.put("-*--", "Y");   toEnglish.put("--**", "Z");   toEnglish.put("*----", "1");
         toEnglish.put("**---", "2");  toEnglish.put("***--", "3");  toEnglish.put("****-", "4");
-        toEnglish.put("5", "*****");  toEnglish.put("6", "-****");  toEnglish.put("--***", "7");
+        toEnglish.put("*****", "5");  toEnglish.put("-****", "6");  toEnglish.put("--***", "7");
         toEnglish.put("---**", "8");  toEnglish.put("----*", "9");  toEnglish.put("-----", "0");
-        toEnglish.put("*-*-*-", "."); toEnglish.put(",", "--**--"); toEnglish.put("?", "**--**");
+        toEnglish.put("*-*-*-", "."); toEnglish.put("--**--", ","); toEnglish.put("**--**", "?");
         toEnglish.put(" ", "|");
     }
 
