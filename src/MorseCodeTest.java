@@ -67,4 +67,14 @@ public class MorseCodeTest {
 
         assertEquals("**** * *--- | *--- *- --*", actual);
     }
+
+    @Test
+    public void getLetterSFromStars(){
+        MorseCodeToEnglish english = new MorseCodeToEnglish();
+
+        String input = "***";
+        String actual = english.convertToEnglish(input);
+
+        assertEquals("S", actual);
+    }
 }
