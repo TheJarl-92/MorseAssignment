@@ -32,6 +32,8 @@ public class MorseCodeToEnglish {
             } else {
                 englishReturn.append(convertedMorse[i]);
             }
+            //Samma kod här som från engelska till morse bara att jag inte kunde komma på en bra lösning
+            //för när ordet borde bli ett nytt ord så allt blir som en lång sträng med mellanslag emellan dem.
         }
         return englishReturn.toString();
     }
