@@ -19,6 +19,9 @@ public class MorseCodeMain {
         question = scan.nextLine();
         while (switchLoop) {
             switch (question.toUpperCase(Locale.ROOT)) {
+                //switch case som ser till att jag bara kan få rätt alternativ ganska lätt
+                //och en while loop för att köra igenom det från rätt plats där felet blev.
+                //Ser också till att inputten alltid är stor bokstav så man kan skriva med stor eller liten
                 case "A":
                     MorseCodeToMorse morse = new MorseCodeToMorse();
                     System.out.print("Write in your letters: ");
@@ -27,12 +30,15 @@ public class MorseCodeMain {
                         System.out.println("You probably used a special sign or letter. Please only use english letters or numbers. ('.' & ',' & '?' also work)");
                         question = "A";
                         break;
+                        //Om null uppstår, skriv om hela inputten igen.
                     }
                     if (morse.convertToMorse(userInput).contains("| |")) {
                         System.out.println("You used more than one space, please only use one.");
                         question = "A";
                         break;
                     }
+                    //Om dubbelspace uppstår på något ställe, skriv om igen.
+
                     System.out.println(morse.convertToMorse(userInput));
                     switchLoop = false;
                     break;
@@ -45,6 +51,8 @@ public class MorseCodeMain {
                         question = "B";
                         break;
                     }
+                    //Samma här, om null uppstår skriv om det man vill översätta.
+
                     System.out.println(english.convertToEnglish(userInput));
                     switchLoop = false;
                     break;
@@ -52,13 +60,14 @@ public class MorseCodeMain {
                     System.out.println("Well okay then. Here's the exit. Off you go then.");
                     switchLoop = false;
                     break;
+                    //Ett onödigt val för programmet men jag ville ha fler än två val och ett sätt att stänga ned programmet.
+
                 default:
                     System.out.print("Hmm, something with your choice went wrong. Please choose correctly (A, B, C): ");
                     question = scan.nextLine();
                     break;
+                    //Kommer bara ha ett val mellan A, B eller C.
             }
-
-
         }
     }
 }
